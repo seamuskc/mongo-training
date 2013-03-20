@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project hwv with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="C:/temp/validate/validate-3.3.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="com.tengen.ValidateHW32Test"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ mongo-java-driver-2.10.1.jar junit-4.7.jar httpclient-4.2.3.jar httpcore-4.2.2.jar commons-logging-1.1.1.jar commons-codec-1.6.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <fileset dir="C:/java/workspaces/mongo-training/hwv/target/test-classes"/>
+            <fileset dir="C:/java/workspaces/mongo-training/hwv/target/classes"/>
+            <zipfileset dir="C:\Users\caseys1\.m2\repository\org\mongodb\mongo-java-driver\2.10.1" includes="mongo-java-driver-2.10.1.jar"/>
+            <zipfileset dir="C:\Users\caseys1\.m2\repository\junit\junit\4.7" includes="junit-4.7.jar"/>
+            <zipfileset dir="C:\Users\caseys1\.m2\repository\org\apache\httpcomponents\httpclient\4.2.3" includes="httpclient-4.2.3.jar"/>
+            <zipfileset dir="C:\Users\caseys1\.m2\repository\org\apache\httpcomponents\httpcore\4.2.2" includes="httpcore-4.2.2.jar"/>
+            <zipfileset dir="C:\Users\caseys1\.m2\repository\commons-logging\commons-logging\1.1.1" includes="commons-logging-1.1.1.jar"/>
+            <zipfileset dir="C:\Users\caseys1\.m2\repository\commons-codec\commons-codec\1.6" includes="commons-codec-1.6.jar"/>
+        </jar>
+    </target>
+</project>
